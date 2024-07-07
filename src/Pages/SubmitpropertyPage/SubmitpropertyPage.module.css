@@ -1,0 +1,26 @@
+.customCardText {
+  font-size: 14px;
+  color: #484848;
+  font-weight: 400;
+}
+.customCardbutton {
+  font-size: 14px;
+  color: #484848;
+  font-weight: 400;
+  text-align: start;
+}
+.service_grid {
+  background-color: #ffffff;
+  border: 1px solid #ebebeb;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  padding: 10px;
+}
+
+.textthm {
+  color: #0d6efd;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 150px;
+}

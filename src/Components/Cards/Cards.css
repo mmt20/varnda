@@ -1,0 +1,10 @@
+.cards{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cards .card-image{
+  width: 33% !important;
+  margin: 0 30px;
+  border-radius: 15px;
+}

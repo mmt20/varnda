@@ -8,7 +8,7 @@ import { Form, Button, Container, Row, Col, ProgressBar } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faDollarSign, faBed, faBath, faRulerCombined, faBuilding } from '@fortawesome/free-solid-svg-icons';
 import UploadWidget from '../../Components/UploadWidget/UploadWidget';
-
+import './NewAdd.css';
 const NewAdd = () => {
   const myIcon = new L.Icon({
     iconUrl: require('leaflet/dist/images/marker-icon.png'),
@@ -62,7 +62,12 @@ const NewAdd = () => {
     'قنا', 'الأقصر', 'أسوان', 'دمياط', 'بورسعيد',
     'الإسماعيلية', 'السويس', 'مطروح', 'شمال سيناء', 'جنوب سيناء',
   ];
-
+  const categories = {
+    مرافق: ["عداد كهرباء", "عداد مياه", "غاز طبيعي", "تليفون أرضي"],
+    ميزات: ["شرفة", "غرف خدم", "غرفة غسيل", "غرفة ملابس", "حديقة خاصة", "موقف سيارات مغطي"],
+    خدمات: ["حمام سباحة", "أسانسير", "أمن"],
+    أجهزة: ["تدفئة", "تكييف", "اجهزة المطبخ", "أجهزة كشف الحريق"]
+  };
   useEffect(() => {
     // تحديث قائمة المدن بناءً على المحافظة المختارة
     if (formData.governorate === 'القاهرة') {
@@ -101,7 +106,14 @@ const NewAdd = () => {
       });
     }
   };
-
+  const toggleAmenity = (amenity) => {
+    setFormData(prevState => ({
+      ...prevState,
+      servicesAmenities: prevState.servicesAmenities.includes(amenity)
+        ? prevState.servicesAmenities.filter(item => item !== amenity)
+        : [...prevState.servicesAmenities, amenity]
+    }));
+  };
   const fetchAddress = async (lat, lng) => {
     const apiKey = 'ede130c0ba4f4355b0e56461701f0455';
     try {
@@ -508,33 +520,27 @@ const NewAdd = () => {
                   )}
                   {currentPage === 4 && (
                     <>
-                      <Form.Group controlId="servicesAmenities" className="mb-3">
-                        <Form.Label>خدمات وكماليات العقار</Form.Label>
-                        <Form.Control
-                          as="select"
-                          multiplevalue={formData.servicesAmenities}
-                          onChange={handleServicesChange}
-                          multiple
-                        >
-                          <option value="عداد كهرباء">عداد كهرباء</option>
-                          <option value="عداد مياه">عداد مياه</option>
-                          <option value="غاز طبيعي">غاز طبيعي</option>
-                          <option value="تليفون أرضي">تليفون أرضي</option>
-                          <option value="شرفة">شرفة</option>
-                          <option value="غرف خدم">غرف خدم</option>
-                          <option value="غرفة غسيل">غرفة غسيل</option>
-                          <option value="غرفة ملابس">غرفة ملابس</option>
-                          <option value="حديقة خاصة">حديقة خاصة</option>
-                          <option value="موقف سيارات مغطي">موقف سيارات مغطي</option>
-                          <option value="حمام سباحة">حمام سباحة</option>
-                          <option value="أسانسير">أسانسير</option>
-                          <option value="أمن">أمن</option>
-                          <option value="تدفئة">تدفئة</option>
-                          <option value="تكييف">تكييف</option>
-                          <option value="أجهزة المطبخ">أجهزة المطبخ</option>
-                          <option value="أجهزة كشف الحريق">أجهزة كشف الحريق</option>
-                        </Form.Control>
-                      </Form.Group>
+                      <Container className="amenities-container">
+                        {Object.entries(categories).map(([category, items]) => (
+                          <div key={category} className="category-section">
+                            <h5>{category}</h5>
+                            <Row>
+                              {items.map(item => (
+                                <Col key={item} xs="auto" className="mb-2">
+                                  <Button
+                                    variant={formData.servicesAmenities.includes(item) ? "primary" : "outline-secondary"}
+                                    onClick={() => toggleAmenity(item)}
+                                    className="amenity-button"
+                                  >
+                                    {item}
+                                  </Button>
+                                </Col>
+                              ))}
+                            </Row>
+                          </div>
+                        ))}
+                      </Container>
+
                       <div className="text-center d-flex justify-content-between">
                         <Button variant="secondary" onClick={handlePreviousPage} className="me-2">
                           الصفحة السابقة

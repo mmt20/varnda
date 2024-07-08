@@ -541,7 +541,7 @@ const NewAdd = () => {
                         ))}
                       </Container>
 
-                      <div className="text-center d-flex justify-content-between">
+                      <div className="text-center d-flex justify-content-between mt-4">
                         <Button variant="secondary" onClick={handlePreviousPage} className="me-2">
                           الصفحة السابقة
                         </Button>

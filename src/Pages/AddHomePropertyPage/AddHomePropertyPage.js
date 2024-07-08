@@ -216,6 +216,42 @@ const AddHomePropertyPage = () => {
                           </Form.Group>
                         </Col>
                       </Row>
+                      <Row>
+                        <Col xs={12} md={6}>
+                          <Form.Group controlId="unitPrice" className="mb-3">
+                            <Form.Label>
+                              <FontAwesomeIcon
+                                icon={faDollarSign}
+                                className="me-2"
+                              />
+                              سعر الوحدة
+                            </Form.Label>
+                            <Form.Control
+                              type="number"
+                              name="unitPrice"
+                              value={formData.unitPrice}
+                              onChange={handleChange}
+                              required
+                            />
+                          </Form.Group>
+                        </Col>
+                        <Col xs={12} md={6}>
+                          <Form.Group controlId="negotiable" className="mb-3">
+                            <Form.Label>قابلية التفاوض على السعر</Form.Label>
+                            <Form.Select
+                              name="negotiable"
+                              value={formData.negotiable}
+                              onChange={handleChange}
+                              required
+                            >
+                              <option value="">اختر</option>
+                              <option value="yes">نعم</option>
+                              <option value="no">لا</option>
+                            </Form.Select>
+                          </Form.Group>
+                        </Col>
+
+                      </Row>
                       <Form.Group controlId="adDescription" className="mb-3">
                         <Form.Label>أضف تفاصيل العقار</Form.Label>
                         <Form.Control

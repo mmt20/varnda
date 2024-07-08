@@ -24,8 +24,11 @@ import FavPage from './Pages/FavPage/FavPage';
 import LoginPage from './Pages/LoginPage/LoginPage';
 import SignupPage from './Pages/SignupPage/SignupPage';
 import SubmitpropertyPage from './Pages/SubmitpropertyPage/SubmitpropertyPage';
-import NewAdd from './Pages/NewAddPage/NewAdd';
 import NotFoundPage from './Pages/NotFoundPage/NotFoundPage';
+import AddApartmentsAndDuplexesPage from './Pages/AddApartmentsAndDuplexesPage/AddApartmentsAndDuplexesPage';
+import AddVillasAndPalacesPage from './Pages/AddVillasAndPalacesPage/AddVillasAndPalacesPage';
+import AddHomePropertyPage from './Pages/AddHomePropertyPage/AddHomePropertyPage';
+import AddResortsAndCoastsPage from './Pages/AddResortsAndCoastsPage/AddResortsAndCoastsPage';
 
 const router = createBrowserRouter([
   {
@@ -115,7 +118,19 @@ const router = createBrowserRouter([
   },
   {
     path: '/add-apartments-duplexes',
-    element: <NewAdd />,
+    element: <AddApartmentsAndDuplexesPage />,
+  },
+  {
+    path: '/add-villas-palaces',
+    element: <AddVillasAndPalacesPage />,
+  },
+  {
+    path: '/add-home-property',
+    element: <AddHomePropertyPage />,
+  },
+  {
+    path: '/add-resorts-coasts',
+    element: <AddResortsAndCoastsPage />,
   },
   {
     path: '*',

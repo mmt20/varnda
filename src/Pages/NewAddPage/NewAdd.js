@@ -6,9 +6,8 @@ import { MapContainer, TileLayer, Marker, Popup, useMapEvents } from 'react-leaf
 import L from 'leaflet';
 import { Form, Button, Container, Row, Col, ProgressBar } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faDollarSign, faBed, faBath, faRulerCombined, faBuilding } from '@fortawesome/free-solid-svg-icons';
-import UploadWidget from '../../Components/UploadWidget/UploadWidget';
-import './NewAdd.css';
+import { faHome, faDollarSign, faBed, faBath, faRulerCombined } from '@fortawesome/free-solid-svg-icons';
+// import './NewAdd.css';
 const NewAdd = () => {
   const myIcon = new L.Icon({
     iconUrl: require('leaflet/dist/images/marker-icon.png'),
@@ -53,7 +52,7 @@ const NewAdd = () => {
   const [cities, setCities] = useState([]);
   const [regions, setRegions] = useState([]);
   const [position, setPosition] = useState([27.640569, 30.864143]);
-  const [showPopup, setShowPopup] = useState(false);
+
 
   const governorates = [
     'القاهرة', 'الإسكندرية', 'الجيزة', 'الدقهلية', 'البحيرة',

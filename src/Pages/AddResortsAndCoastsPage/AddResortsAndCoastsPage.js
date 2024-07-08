@@ -488,11 +488,11 @@ const AddResortsAndCoastsPage = () => {
                           onChange={handleChange}
                           required
                         >
-                          <option value="">اختر</option>
-                          <option value="super_lux">سوبر لوكس</option>
-                          <option value="lux">لوكس</option>
-                          <option value="semi_finished">نصف تشطيب</option>
-                          <option value="core_shell">على الطوب</option>
+                          <option value="علي الطوب">علي الطوب</option>
+                          <option value="محارة وحلوق">محارة وحلوق</option>
+                          <option value="نصف تشطيب">نصف تشطيب</option>
+                          <option value="تشطيب كامل">تشطيب كامل</option>
+                          <option value="تشطيب بالأجهزة">تشطيب بالأجهزة</option>
                         </Form.Select>
                       </Form.Group>
 

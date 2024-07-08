@@ -29,6 +29,10 @@ import AddApartmentsAndDuplexesPage from './Pages/AddApartmentsAndDuplexesPage/A
 import AddVillasAndPalacesPage from './Pages/AddVillasAndPalacesPage/AddVillasAndPalacesPage';
 import AddHomePropertyPage from './Pages/AddHomePropertyPage/AddHomePropertyPage';
 import AddResortsAndCoastsPage from './Pages/AddResortsAndCoastsPage/AddResortsAndCoastsPage';
+import AddCommercialUnitsPage from './Pages/AddCommercialUnitsPage/AddCommercialUnitsPage';
+import AddLandPage from './Pages/AddLandPage/AddLandPage';
+import AddBuildingsPage from './Pages/AddBuildingsPage/AddBuildingsPage';
+import AddNewCemeteries from './Pages/AddNewCemeteries/AddNewCemeteries';
 
 const router = createBrowserRouter([
   {
@@ -131,6 +135,22 @@ const router = createBrowserRouter([
   {
     path: '/add-resorts-coasts',
     element: <AddResortsAndCoastsPage />,
+  },
+  {
+    path: '/add-commercial-units',
+    element: <AddCommercialUnitsPage />,
+  },
+  {
+    path: '/add-lands',
+    element: <AddLandPage />,
+  },
+  {
+    path: '/add-buildings',
+    element: <AddBuildingsPage />,
+  },
+  {
+    path: '/add-cemeteries',
+    element: <AddNewCemeteries />,
   },
   {
     path: '*',

@@ -8,15 +8,15 @@ import Header from '../../Components/Header/Header';
 import Footer from '../../Components/Footer/Footer';
 import styles from './SubmitpropertyPage.module.css';
 
-import image1 from '../../images/image1.jpeg';
-import image2 from '../../images/image2.jpeg';
-import image3 from '../../images/image3.jpeg';
-import image4 from '../../images/image4.jpeg';
-import image5 from '../../images/image5.jpeg';
-import image6 from '../../images/image6.jpeg';
-import image7 from '../../images/image7.jpeg';
-import image8 from '../../images/image8.jpeg';
-import image9 from '../../images/image9.jpeg';
+import image1 from '../../images/image1.jpg';
+import image2 from '../../images/image2.jpg';
+import image3 from '../../images/image3.jpg';
+import image4 from '../../images/image4.jpg';
+import image5 from '../../images/image5.jpg';
+import image6 from '../../images/image6.jpg';
+import image7 from '../../images/image7.jpg';
+import image8 from '../../images/image8.jpg';
+
 
 function SubmitpropertyPage() {
   // Array containing property cards data
@@ -77,13 +77,7 @@ function SubmitpropertyPage() {
       description: 'مقابر ومدافن للبيع',
       link: '/add-cemeteries',
     },
-    {
-      image: image9,
-      alt: 'غرف وأجنحة فندقية',
-      title: 'غرف وأجنحة فندقية',
-      description: 'قريباً',
-      link: '#',
-    },
+
   ];
 
   return (

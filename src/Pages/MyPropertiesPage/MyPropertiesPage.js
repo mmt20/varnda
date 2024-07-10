@@ -6,8 +6,8 @@ import styles from './MyPropertiesPage.module.css'; // Import CSS module
 
 const MyPropertiesPage = () => {
   const [data, setData] = useState([
-    { id: 10791, title: 'scsx', date: '2024-07-10 19:45:07', category: 'فلل وقصور' },
-    { id: 10790, title: 'dc', date: '2024-07-10 19:41:46', category: 'شقق و دوبلكس' },
+    { id: 10791, title: 'شقة 78متر + حديقة خاصة في bella bay beach الممشي السياحي الغردقة للبيع', date: '2024-07-10 19:45:07', category: 'فلل وقصور' },
+    { id: 10790, title: 'شقه فيو بحر بالممشى السياحي بمقدم يبدا من 10% وتسهيلات تصل لـ4 سنوات', date: '2024-07-10 19:41:46', category: 'شقق و دوبلكس' },
   ]);
 
   const handleEdit = (id) => {

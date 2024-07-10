@@ -33,6 +33,8 @@ import AddCommercialUnitsPage from './Pages/AddCommercialUnitsPage/AddCommercial
 import AddLandPage from './Pages/AddLandPage/AddLandPage';
 import AddBuildingsPage from './Pages/AddBuildingsPage/AddBuildingsPage';
 import AddNewCemeteries from './Pages/AddNewCemeteries/AddNewCemeteries';
+import ProfilePage from './Pages/ProfilePage/ProfilePage';
+import MyPropertiesPage from './Pages/MyPropertiesPage/MyPropertiesPage';
 
 const router = createBrowserRouter([
   {
@@ -151,6 +153,14 @@ const router = createBrowserRouter([
   {
     path: '/add-cemeteries',
     element: <AddNewCemeteries />,
+  },
+  {
+    path: '/myprofile',
+    element: <ProfilePage />,
+  },
+  {
+    path: '/myproperties',
+    element: <MyPropertiesPage />,
   },
   {
     path: '*',

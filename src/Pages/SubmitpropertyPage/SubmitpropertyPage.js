@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 import Header from '../../Components/Header/Header';
 import Footer from '../../Components/Footer/Footer';
-import styles from './SubmitpropertyPage.module.css';
+
 
 import image1 from '../../images/image1.jpg';
 import image2 from '../../images/image2.jpg';
@@ -25,14 +25,14 @@ function SubmitpropertyPage() {
       image: image1,
       alt: 'شقق و دوبلكس',
       title: 'شقق و دوبلكس',
-      description: 'شقة، دوبلكس، بنتهاوس، ستوديو، غرفة، سرير',
+      description: 'شقة، دوبلكس، بنتهاوس، ستوديو، غرفة، قصر',
       link: '/add-apartments-duplexes',
     },
     {
       image: image2,
       alt: 'فلل وقصور',
       title: 'فلل وقصور',
-      description: 'شقة، دوبلكس، بنتهاوس، ستوديو، غرفة، سرير',
+      description: 'قصر، فيلا منفصلة، توين هاوس ، تاون هاوس',
       link: '/add-villas-palaces',
     },
     {
@@ -84,34 +84,35 @@ function SubmitpropertyPage() {
     <div>
       <Header />
 
-      <section className="our-service pb-12">
+      <section className="py-5">
         <Container>
-          <Row>
-            <Col lg={12}>
-              <div className="main-title text-center mb-40">
-                <h2 className={styles.textthm}>انشر إعلانك</h2>
-                <p className="text-center mb-4">اختر الفئة</p>
-              </div>
+          <Row className="justify-content-center mb-5">
+            <Col lg={8} className="text-center">
+              <h2 className="text-primary mb-3">انشر إعلانك</h2>
+              <p>اختر الفئة</p>
             </Col>
+          </Row>
 
+          <Row>
             {propertyCards.map((property, index) => (
-              <Col key={index} sm={6} md={6} lg={4} className="mb-4">
-                <Link to={property.link} style={{ textDecoration: 'none' }}>
-                  <Card className="service_grid">
+              <Col key={index} sm={6} md={4} lg={3} className="mb-4">
+                <Link to={property.link} className="text-decoration-none">
+                  <Card className="h-100 shadow-sm">
                     <Card.Img
                       variant="top"
                       src={property.image}
                       alt={property.alt}
-                      style={{ height: '250px', width: '100%' }}
+                      className="img-fluid"
+                      style={{ height: '200px', objectFit: 'cover' }}
                     />
-                    <Card.Body>
+                    <Card.Body className="d-flex flex-column">
                       <Card.Title className="text-primary">{property.title}</Card.Title>
-                      <Card.Text className={styles.customCardText}>
-                        {property.description}
-                      </Card.Text>
-                      <Card.Text className={styles.customCardbutton}>
-                        اضافه اعلانك <FontAwesomeIcon icon={faArrowRight} />
-                      </Card.Text>
+                      <Card.Text className="flex-grow-1">{property.description}</Card.Text>
+                      <div className="text-end mt-auto">
+                        <small className="text-muted">
+                          اضافه اعلانك <FontAwesomeIcon icon={faArrowRight} />
+                        </small>
+                      </div>
                     </Card.Body>
                   </Card>
                 </Link>
@@ -119,8 +120,9 @@ function SubmitpropertyPage() {
             ))}
           </Row>
         </Container>
-        <Footer />
       </section>
+
+      <Footer />
     </div>
   );
 }
